@@ -1,0 +1,75 @@
+body {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-align: center;
+    color: #f02d7d;
+    background-color: black;
+}
+
+a, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f02d7d;
+    text-decoration: none;
+}
+
+#boxy > a, #boxy > a:visited {
+    color: black
+}
+
+#boxy > a:hover {
+    color: #f02d7d;
+}
+
+.user-form {
+    width: 25%;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#commentForm {
+    width: 60%;
+}
+
+.comment-node {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.comment-node > p {
+    margin: 0.1em;
+}
+
+#postsPage {
+    width: 70%;
+    margin: auto;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+}
+
+textarea {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.post-node {
+    background-color: white;
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    padding: .5em;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: left;
+}
+
+#welcome {
+    margin-bottom: 2em;
+}

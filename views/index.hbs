@@ -1,0 +1,75 @@
+<header>
+    <nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        {{#if loggedIn}}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+        </ul>
+        {{else}}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Log In</a>
+            </li>
+        </ul>
+        {{/if}}
+    </div>
+</header>
+
+<div id='welcome'>
+    <h1>Welcome, this is a semi-anonymous social bulletin board.</h1>
+    <small>Create an account to begin posting and commenting. Posts are linked to your username, but only you can view your own post history via your profile.</small>
+</div>
+
+<div class='container'>
+<div class='row d-flex justify-content-center'>
+    <div class='col-md'>
+        <form action='/' method='GET' id='search-form'>
+            <label>Search posts:</label>
+            <input type='text' class="form-control-sm" name='searchQ' value='' placeholder='search posts by keywords'>
+            <input class='btn btn-dark' type='submit' name='' value='Search'>
+        </form>
+    </div>
+
+    <div class='col-md'>
+        {{#if loggedIn}}
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-post">Create a Post</button>
+        {{/if}}
+    </div>
+</div>
+
+<div class='row d-flex justify-content-center' id='boxy'>
+    {{#each posts}}
+    <a href='/{{_id}}/comments'>
+        <div class='post-node' class='col-sm' id='post{{_id}}'>
+            <p>{{text}}</p>
+        </div>
+    </a>
+    {{/each}}
+</div>
+</div>
+
+<div class="modal fade" id="modal-post" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action='/' method='POST'>
+                    <textarea name='postText' rows='5' required></textarea>
+                    <input class='btn btn-dark' type="submit" value="Post">
+                    <input class='btn btn-dark' type="button" data-dismiss="modal" value="Cancel">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

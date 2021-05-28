@@ -1,0 +1,23 @@
+<header>
+    <nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<form action="/login" method="POST" class="user-form">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <input type="submit" class="btn btn-dark" value="Log in"><br>
+    <small>Or <a href='/register'>Create an Account</a></small>
+</form>

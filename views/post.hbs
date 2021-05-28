@@ -1,0 +1,55 @@
+<header>
+    <nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        {{#if loggedIn}}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+        </ul>
+        {{else}}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Log In</a>
+            </li>
+        </ul>
+        {{/if}}
+    </div>
+</header>
+
+<div id='postsPage'>
+<div>
+    <h2>{{text}}</h2>
+    <small>{{user}} / </small>
+    <small>{{createdAt}} / </small>
+    <small>{{numComments}} comments</small>
+</div>
+
+{{#each comments}}
+<div class='comment-node'>
+    <p>{{text}}</p>
+    <small>{{user}} / </small>
+    <small>{{createdAt}}</small>
+</div>
+{{/each}}
+
+
+{{#if loggedIn}}
+<form action='/{{_id}}/comments' method='POST' id='commentForm'>
+    <div class="form-group">
+        <textarea class="form-control" name="commentText" rows="3"></textarea>
+        <input type='submit' class='btn btn-dark' name='' value='Comment'>
+    </div>
+</form>
+{{/if}}
+</div>

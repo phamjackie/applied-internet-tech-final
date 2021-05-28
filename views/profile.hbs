@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class='row d-flex justify-content-center' id='boxy'>
+    {{#each posts}}
+    <a href='/{{this._id}}/comments'>
+        <div class='post-node' class='col-sm' id='post{{this._id}}'>
+            <p>{{this.text}}</p>
+        </div>
+    </a>
+    {{/each}}
+</div>
+</div>
