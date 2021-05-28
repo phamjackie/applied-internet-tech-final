@@ -1,0 +1,32 @@
+{
+  "name": "phamjackie-final-project",
+  "version": "1.0.0",
+  "description": "## Overview",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0480-001-fall-2019/phamjackie-final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0480-001-fall-2019/phamjackie-final-project/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0480-001-fall-2019/phamjackie-final-project#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "dot": "^1.1.2",
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "hbs": "^4.0.6",
+    "mongoose": "^5.7.8",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
